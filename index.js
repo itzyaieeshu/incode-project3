@@ -1,10 +1,11 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
+// const saltRounds = 10;
+const SHA256 = require('crypto-js/sha256');
 
 const app = express();
 const data = require('./data');
 
-const saltRounds = 10;
 const port = 3000;
 
 app.use(express.json());
@@ -27,11 +28,7 @@ app.get('/users/:id/schedules', (req, res) => {
   const result = [];
   for (let i = 0; i < data.schedules.length; i++) {
     const schedule = data.schedules[i];
-    console.log(schedule);
-    console.log(schedule.user_id);
-    const userId = Number(schedule.user_id);
-    console.log(userId);
-    if (userId === id) {
+    if (schedule.user_id === id) {
       result.push(schedule);
     }
   }
@@ -39,18 +36,15 @@ app.get('/users/:id/schedules', (req, res) => {
 });
 app.post('/users', (req, res) => {
   const arr = req.body;
-  let hashedPassword;
-  bcrypt.hash(arr.password, saltRounds, (err, hash) => {
-    if (err) {
-      console.log(err);
-    } else {
-      hashedPassword = hash;
-      console.log(hashedPassword)
-      arr.password = hashedPassword;
-    }
-  });
-  console.log(arr.password);
-  // console.log(typeof arr);
+  // bcrypt.hash(arr.password, saltRounds, (err, hash) => {
+  //   if (!err) {
+  //     arr.password = hash;
+  //     data.users.push(arr);
+  //   } else {
+  //     console.log(err);
+  //   }
+  // });
+  arr.password = SHA256(arr.password).toString();
   data.users.push(arr);
   res.send(data.users);
 });

@@ -12,6 +12,7 @@
     },
     "rules": {
         "no-console":"off",
-        "no-plusplus":"off"
+        "no-plusplus":"off",
+        "indent":"off"
     }
 }
