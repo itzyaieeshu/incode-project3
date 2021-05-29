@@ -3,7 +3,7 @@
 
 ### Installation
 This project needs to install node pakages.
-Navigate to the project folder using cmd line, Run the below code.
+Navigate to the project folder using cmd line, Run the below cmd.
 
 ***npm install***
 
