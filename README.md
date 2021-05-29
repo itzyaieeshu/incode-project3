@@ -1,7 +1,7 @@
 # Incode - Project3A
-## Mr. coffee
+# Mr. coffee
 
-### Installation
+## Installation
 This project needs to install node pakages.
 Navigate to the project folder using cmd line, Run the below cmd.
 
@@ -11,8 +11,9 @@ The above command will install all the required packages for the project. Once t
 
 ***npm run dev***
 
-### Instructions
-🚀 Project A
+## Instructions
+### 🚀 Project A
+
 🚩 Step 1 : Set up the Express application
 
  
@@ -181,7 +182,7 @@ And this time, when we request /users/3, our new user is returned.
  
 
 💡Beware, we remind you that these changes on the data are not persistent! If you restart your Express application, you will only have the 3 initial users again.
-## Acknowledgement
+### Acknowledgement
 
 Task instructions - Incode Academy
 
