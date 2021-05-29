@@ -34,8 +34,18 @@ app.get('/users/:id/schedules', (req, res) => {
   }
   res.send(result);
 });
+app.post('/schedules', (req, res) => {
+  const arr = {
+    user_id: Number(req.body.user_id),
+    day: Number(req.body.day),
+    start_at: req.body.start_at,
+    end_at: req.body.end_at,
+};
+  data.schedules.push(arr);
+  res.send(data.schedules);
+});
 app.post('/users', (req, res) => {
-  const arr = req.body;
+  const user = req.body;
   // bcrypt.hash(arr.password, saltRounds, (err, hash) => {
   //   if (!err) {
   //     arr.password = hash;
@@ -44,8 +54,8 @@ app.post('/users', (req, res) => {
   //     console.log(err);
   //   }
   // });
-  arr.password = SHA256(arr.password).toString();
-  data.users.push(arr);
+  user.password = SHA256(user.password).toString();
+  data.users.push(user);
   res.send(data.users);
 });
 app.listen(port, () => {
