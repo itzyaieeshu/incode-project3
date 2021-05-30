@@ -10,9 +10,10 @@ const port = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.send('Welcome to our schedule website');
+  res.render('pages/index');
 });
 app.get('/users', (req, res) => {
   res.send(data.users);
