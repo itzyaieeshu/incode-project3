@@ -13,6 +13,8 @@
     "rules": {
         "no-console":"off",
         "no-plusplus":"off",
-        "indent":"off"
+        "indent":"off",
+        "max-len":"off",
+        "no-param-reassign":"warn"
     }
 }
