@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../includes/header'); -%>
+</head>
+
+<body class="hm-gradient bg-body">
+    <!--/.Navbar -->
+    <%- include('../includes/nav'); -%>
+    <!--/.Navbar -->
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 pt-5 pb-5">
+                <h1>Welcome to our schedule website</h1>
+            </div>
+            <div class="col-lg-12 pt-1 pb-3">
+                <div class="row">
+                <div class="col-lg-6">
+                    <h2>Explore users</h2>
+                </div>
+                <div class="col-lg-6">
+                    <div class="float-right">
+                    <a type="button" href="/user/new" class="btn btn-primary btn-lg">Add User</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead class="thead text-light bg-primary">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (let i = 0; i < users.length; i++) { %>
+                        <tr>
+                            <th scope="row"><%= i %></th>
+                            <td><%= users[i].firstname %></td>
+                            <td><%= users[i].lastname %></td>
+                            <td><%= users[i].email %></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <%- include('../includes/footer'); -%>
+    <%- include('../includes/footer-js'); -%>
+</body>
+
+</html>

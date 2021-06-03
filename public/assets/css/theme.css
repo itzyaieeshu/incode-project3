@@ -1,0 +1,80 @@
+body {
+    color:#6A7B8B !important;
+}
+.text-primary {
+    color:#6A7B8B !important;
+}
+.bg-primary {
+    background-color: #6A7B8B !important;
+}
+.btn-primary {
+    background-color: #6A7B8B;
+    border-color: #6A7B8C !important;
+}
+.btn-primary:hover {
+    background-color: #F0F2F4 !important;
+    color: #6A7B8B !important;
+}
+.bg-body {
+    background-color: #f0f2f4;
+}
+.bg-card {
+    background-color: #f0f2f4;
+}
+.site-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+div > svg {
+    padding-top: 15%;
+    padding-bottom: 15%;
+    width: 50%;
+    height: 50%;
+}
+.form-control {
+    border: 1px solid #C4CAD0;
+    background: #C4CAD0;
+}
+form > div:nth-child(3){
+    padding-bottom: 20px;
+}
+#submit-user:disabled {
+    cursor: not-allowed;
+    background-color: rgba(106,123,140, 0.3 ) !important;
+}
+.error-box {
+    background-color: #d3d3d3 !important;
+    border-color: #E24B3B !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(196, 202, 208, 0.50) !important;
+    border:1px solid #E24B3B !important;
+}
+.error-text {
+    color: #E24B3B;
+    font-style: italic;
+    font-size: 14px;
+}
+.valid-box {
+    background-color: #f1f9ec !important;
+    border-color: #6BBE3F !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(196, 202, 208, 0.50) !important;
+    border:1px solid #6BBE3F !important;
+}
+.password-meter-shell {
+    margin-top: 10px;
+    width: 100%;
+    height: 15px;
+    border-radius: 25px;
+    border: 1px solid #6BBE3F;
+    color: #f1f9ec;
+    font-size: 9px;
+}
+.password-meter {
+    width: 1%;
+    height: 13px;
+    background-color: Red;
+    border-radius: 20px;
+}
