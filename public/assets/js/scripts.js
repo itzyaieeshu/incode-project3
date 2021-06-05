@@ -1,4 +1,3 @@
-console.log('Scripts file');
 window.onload = ('Load', () => {
     const firstNameMessage = document.getElementById('firstNameMessage');
     const lastNameMessage = document.getElementById('lastNameMessage');

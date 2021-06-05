@@ -33,7 +33,7 @@ app.get('/users', (req, res) => {
 app.get('/user/new', (req, res) => {
   res.render('pages/add-user', {
     documentTitle: 'Add Users',
-    pageName: '',
+    pageName: 'add-user',
   });
 });
 app.get('/schedules', (req, res) => {
