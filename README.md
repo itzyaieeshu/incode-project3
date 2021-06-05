@@ -1,4 +1,4 @@
-# Incode - Project3A
+# Incode - Project3B
 # Mr. coffee
 
 ## Installation
