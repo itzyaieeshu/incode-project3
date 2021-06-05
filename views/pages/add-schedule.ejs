@@ -1,81 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <%- include('../includes/header'); -%>
-</head>
+  </head>
 
-<body class="hm-gradient bg-body">
-    <!--/.Navbar -->
+  <body class="hm-gradient bg-body">
     <%- include('../includes/nav'); -%>
-        <!--/.Navbar -->
-        <!-- Page Content -->
-        <div class="container">
-            <div class="row justify-content-center pb-5">
-                <div class="col-lg-12 pt-5 pb-5">
-                    <h1>Welcome to our schedule website</h1>
-                </div>
-                <div class="col-lg-6 pb-5">
-                    <form method="POST" action="/schedule/add" novalidate>
-                        <div class="form-group">
-                            <label for="username">Name</label>
-                            <select class="form-control" id="username" name="user_id">
-                                <% for (let i=0; i < users.length; i++) { %>
-                                    <option value="<%= i %>">
-                                        <%= users[i].firstname %>
-                                            <%= users[i].lastname %>
-                                    </option>
-                                    <% } %>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="day">Day</label>
-                            <select class="form-control" id="day" name="day">
-                                <% for (let i=0; i < days.length; i++) { %>
-                                    <option value="<%= i+1 %>">
-                                        <%= days[i] %>
-                                    </option>
-                                    <% } %>
-                            </select>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="start_at">Start At</label>
-                                    <select class="form-control" id="start_at" name="start_at">
-                                        <% for (let i=0; i < timeOption.length; i++) { %>
-                                            <option value="<%= timeOption[i] %>">
-                                                <%= timeOption[i] %>
-                                            </option>
-                                            <% } %>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="end_at">End At</label>
-                                    <select class="form-control" id="end_at" name="end_at">
-                                        <% for (let i=0; i < timeOption.length; i++) { %>
-                                            <option value="<%= timeOption[i] %>">
-                                                <%= timeOption[i] %>
-                                            </option>
-                                            <% } %>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col text-center">
-                            <button type="submit" class="btn btn-primary btn-lg" id="submit-schedule">Add
-                                Schedule</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- /.row -->
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+        <div class="col-lg-12 pt-5 pb-5">
+          <h1>Welcome to our schedule website</h1>
         </div>
-        <!-- /.container -->
-        <%- include('../includes/footer'); -%>
-            <%- include('../includes/footer-js'); -%>
-</body>
-
+        <div class="col-lg-6 pb-5">
+          <form method="POST" action="/schedule/add" novalidate>
+            <div class="form-group">
+              <label for="username">Name</label>
+              <select class="form-control" id="username" name="user_id">
+                <% for (let i=0; i < users.length; i++) { %>
+                <option value="<%= i %>">
+                  <%= users[i].firstname %> <%= users[i].lastname %>
+                </option>
+                <% } %>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="day">Day</label>
+              <select class="form-control" id="day" name="day">
+                <% for (let i=0; i < days.length; i++) { %>
+                <option value="<%= i+1 %>"><%= days[i] %></option>
+                <% } %>
+              </select>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="start_at">Start At</label>
+                  <select class="form-control" id="start_at" name="start_at">
+                    <% for (let i=0; i < timeOption.length; i++) { %>
+                    <option value="<%= timeOption[i] %>">
+                      <%= timeOption[i] %>
+                    </option>
+                    <% } %>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="end_at">End At</label>
+                  <select class="form-control" id="end_at" name="end_at">
+                    <% for (let i=0; i < timeOption.length; i++) { %>
+                    <option value="<%= timeOption[i] %>">
+                      <%= timeOption[i] %>
+                    </option>
+                    <% } %>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col text-center">
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+                id="submit-schedule"
+              >
+                Add Schedule
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include('../includes/footer'); -%> 
+    <%- include('../includes/footer-js');
+    -%>
+  </body>
 </html>
