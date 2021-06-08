@@ -3,6 +3,8 @@ const express = require('express');
 // const saltRounds = 10;
 const SHA256 = require('crypto-js/sha256');
 
+const db = require('./config/database');
+
 const app = express();
 const data = require('./data');
 
