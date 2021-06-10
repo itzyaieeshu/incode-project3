@@ -1,11 +1,20 @@
-# Incode - Project3B
+# Incode - Project3C
 # Mr. coffee
 
 ## Installation
-This project needs to install node pakages.
+This project needs to install node pakages and postgres database.
+Install postgres database in your system before starting the project installation.
 Navigate to the project folder using cmd line, Run the below cmd.
 
 ***npm install***
+
+Once node packages were installed. Create database and tables using the below command
+
+***npm run database-migration***
+
+Insert sample data on the database using the below command
+
+***npm run database-seeding***
 
 The above command will install all the required packages for the project. Once the npm pakages were installed properly. Start the server by running the below cmd.
 
