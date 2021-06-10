@@ -2,7 +2,6 @@ const express = require('express');
 require('dotenv').config();
 
 const app = express();
-const data = require('./data');
 
 const port = 3000;
 
@@ -15,20 +14,6 @@ require('./routes/index')(app);
 require('./routes/users')(app);
 require('./routes/schedules')(app);
 
-app.get('/users/:id', (req, res) => {
-  res.send(data.users[req.params.id]);
-});
-app.get('/users/:id/schedules', (req, res) => {
-  const id = Number(req.params.id);
-  const result = [];
-  for (let i = 0; i < data.schedules.length; i++) {
-    const schedule = data.schedules[i];
-    if (schedule.user_id === id) {
-      result.push(schedule);
-    }
-  }
-  res.send(result);
-});
 app.listen(port, () => {
   console.log(`Mr.coffee app listening at http://localhost:${port}`);
 });
