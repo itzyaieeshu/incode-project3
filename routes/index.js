@@ -1,8 +1,5 @@
+const indexController = require('../controllers/indexController');
+
 module.exports = (app) => {
-    app.get('/', (req, res) => {
-        res.render('pages/index', {
-          decumentTitle: 'Home',
-          pageName: 'home',
-        });
-    });
+    app.get('/', indexController.indexPage);
 };
