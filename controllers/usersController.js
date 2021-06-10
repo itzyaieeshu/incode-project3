@@ -1,18 +1,17 @@
 const SHA256 = require('crypto-js/sha256');
-const db = require('../config/database');
+const usersModel = require('../models/users');
 
 const index = (req, res) => {
-    db.any('SELECT * FROM users')
-    .then((users) => {
-      res.render('pages/users', {
-        documentTitle: 'Users',
-        pageName: 'users',
-        users,
-      });
-    })
-    .catch((err) => {
-      res.send(err);
+  usersModel.getUsers().then((users) => {
+    res.render('pages/users', {
+      documentTitle: 'Users',
+      pageName: 'users',
+      users,
     });
+  })
+  .catch((err) => {
+    res.send(err);
+  });
   };
 const newUser = (req, res) => {
     res.render('pages/add-user', {
@@ -31,8 +30,7 @@ const addUser = (req, res) => {
     //   }
     // });
     user.password = SHA256(user.password).toString();
-    db.any('INSERT INTO users(firstname, lastname, email, password) Values ($1,$2,$3,$4);', [user.firstname, user.lastname, user.email, user.password])
-    .then(() => {
+    usersModel.insertUser(user).then(() => {
       res.redirect('/users');
     })
     .catch((err) => {

@@ -1,12 +1,12 @@
-const db = require('../config/database');
+const usersModel = require('../models/users');
+const schedulesModel = require('../models/schedules')
 
 const day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const time = ['12AM', '1AM', '2AM', '3AM', '4AM', '5AM', '6AM', '7AM', '8AM', '9AM', '10AM', '11AM',
 '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM', '9PM', '10PM', '11PM'];
 
 const index = (req, res) => {
-    db.any('SELECT * FROM schedules')
-    .then((schedules) => {
+    schedulesModel.getSchedules().then((schedules) => {
       res.render('pages/schedules', {
         documentTitle: 'Schedules',
         pageName: 'schedules',
@@ -18,8 +18,7 @@ const index = (req, res) => {
     });
   };
 const newSchedule = (req, res) => {
-    db.any('SELECT * FROM users')
-    .then((users) => {
+    usersModel.getUsers().then((users) => {
       res.render('pages/add-schedule', {
         documentTitle: 'Add Schedules',
         pageName: '',
@@ -53,8 +52,7 @@ const addSchedule = (req, res) => {
       end_at: timestamp(req.body.end_at),
   };
   console.log(schedule);
-    db.any('INSERT INTO schedules(user_id, day, start_at, end_at) Values ($1,$2,$3,$4);', [schedule.user_id, schedule.day, schedule.start_at, schedule.end_at])
-    .then(() => {
+    schedulesModel.insertSchedule(schedule).then(() => {
       res.redirect('/schedules');
     })
     .catch((err) => {
