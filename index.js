@@ -1,6 +1,5 @@
 const express = require('express');
-// const bcrypt = require('bcrypt');
-// const saltRounds = 10;
+require('dotenv').config();
 
 const app = express();
 const data = require('./data');
