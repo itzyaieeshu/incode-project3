@@ -47,15 +47,12 @@ const addSchedule = (req, res) => {
     }
     return result;
   };
-  console.log('test');
-  console.log(req.body.user_id);
   const schedule = {
     user_id: Number(req.body.user_id),
     day: Number(req.body.day),
     start_at: timestamp(req.body.start_at),
     end_at: timestamp(req.body.end_at),
   };
-  console.log(schedule);
   schedulesModel
     .insertSchedule(schedule)
     .then(() => {
