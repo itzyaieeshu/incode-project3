@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "database-migrate": "scripts/migration.sh",
-    "database-seed": "scripts/seed.sh",
+    "database-migration": "scripts/migration.sh",
+    "database-seeding": "scripts/seed.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
   },
